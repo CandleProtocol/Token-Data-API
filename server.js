@@ -15,7 +15,7 @@ const removeTrailingSlash = require('./middleware/removeTrailingSlash');
 const PORT = process.env.PORT || 3001
 
 // Call getChainData here to begin chain data update loop and start caching new data to database
-getChainData() 
+getChainData()
 
 const app = express()
 
@@ -24,7 +24,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100 // limit each IP to 100 requests per windowMs
 });
- 
+
 //  apply to all requests
 app.use(cors())
 app.use(bodyParser.text())
@@ -44,7 +44,7 @@ app.use(morgan('tiny'))
 
 // Routes
 app.use(/^\/$/, (req, res) => {
-  res.send("Welcome to the Fomocraft API!")
+  res.send("Welcome to the Candle API!")
 })
 
 
